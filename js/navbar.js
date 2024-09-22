@@ -1,12 +1,13 @@
 function toggleNavbar() {
   const navbarCollapse = document.getElementById('navbar-collapse');
-  navbarCollapse.classList.toggle('show'); // This should toggle the class
+  navbarCollapse.classList.toggle('show'); // Toggle the sliding menu
 }
 
 function initializeNavbar() {
   const navbarToggle = document.getElementById('navbar-toggle');
   if (navbarToggle) {
-      navbarToggle.addEventListener('click', toggleNavbar); // Attach the event listener
+      navbarToggle.addEventListener('click', toggleNavbar);
   }
 }
-console.log('Navbar JS loaded'); // Add this line
+
+document.addEventListener('DOMContentLoaded', initializeNavbar);

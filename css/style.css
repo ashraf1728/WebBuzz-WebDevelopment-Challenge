@@ -1,50 +1,13 @@
 :root {
-    --primary-color: #f45b69; /* Example primary color */
-    --secondary-color: #456990; /* Example secondary color */
-    --tertiary-color: #fff;
+    --primary-color: #f45b69; /* Primary color */
+    --secondary-color: #456990; /* Secondary color */
+    --tertiary-color: #fff;     /* White */
 }
-body{
+
+body {
     font-family: 'Poppins', sans-serif;
-    z-index: 1000;
-}
-
-/* Navbar collapse (menu) hidden by default */
-.navbar-collapse {
-    display: none;
-    opacity: 0;
-    transition: opacity 0.5s ease; /* Smooth transition for showing/hiding */
-}
-
-/* Show navbar-collapse when the show class is added */
-.navbar-collapse.show {
-    display: block;
-    opacity: 1;
-    transition: opacity 0.5s ease; /* Smooth transition for showing/hiding */
-}
-
-/* Basic styling for the toggle button */
-.navbar-toggle {
-    cursor: pointer;
-    background-color: var(--primary-color);
-    border: none;
-    padding: 10px;
-    color: var(--secondary-color);
-    font-size: 16px;
-    transition: background-color 0.3s ease, color 0.3s ease; /* Add smooth transitions */
-}
-
-.navbar-toggle:hover {
-    background-color: var(--tertiary-color); /* Change background on hover */
-    color: var(--primary-color); /* Change text color on hover */
-}
-
-.icon-bar {
-    display: block;
-    width: 22px;
-    height: 2px;
-    background-color: var(--secondary-color);
-    margin: 4px 0;
-    transition: background-color 0.3s ease; /* Smooth transition for icon color */
+    margin: 0;
+    padding: 0;
 }
 
 .header {
@@ -52,32 +15,83 @@ body{
     justify-content: space-between;
     align-items: center;
     background-color: var(--primary-color);
-    border: 0px 0px;
-    padding: 0px 20px;
-    transition: background-color 0.3s ease; /* Smooth background color change */
+    padding: 10px 20px;
     position: sticky;
     top: 0;
     z-index: 1000;
+    height: 60px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
 }
 
+/* Logo on the right */
 .brand a {
     color: var(--tertiary-color);
     text-decoration: none;
     font-size: 1.5em;
 }
 
-.nav-elements {
-    background-color: var(--tertiary-color);
-    color: var(--secondary-color);
-    font-size: larger;
-    padding: 10px;
-    text-align: center;
-    transition: background-color 0.3s ease, color 0.3s ease, transform 0.3s ease;
+/* Navbar toggle icon on the left */
+.navbar-toggle {
+    cursor: pointer;
+    background-color: var(--primary-color);
+    border: none;
+    /* padding: 10px; */
+    color: var(--tertiary-color);
+    font-size: 16px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    height: 24px;
+    width: 30px;
+}
+.navbar-toggle:hover{
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
 }
 
-/* Add hover effect to nav-elements */
+.icon-bar {
+    width: 100%;
+    /* height: 2px; */
+    background-color: var(--primary-color);
+    transition: background-color 0.3s ease;
+}
+
+/* The sliding navbar menu (hidden by default) */
+.navbar-collapse {
+    position: fixed;
+    top: 60px; /* Below the header */
+    left: -250px; /* Hidden off-screen */
+    width: 250px;
+    height: calc(100vh - 60px);
+    background-color: var(--primary-color);
+    transition: left 0.3s ease-in-out;
+    padding-top: 20px;
+    z-index: 999;
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.2);
+}
+
+/* When the menu is shown, slide it in */
+.navbar-collapse.show {
+    left: 0; /* Slide in from the left */
+}
+
+/* Navbar elements styling */
+.nav-elements {
+    padding: 15px 20px;
+    color: var(--tertiary-color);
+    font-size: 18px;
+    background-color: var(--primary-color);
+    transition: background-color 0.3s, transform 0.3s ease;
+}
+
 .nav-elements:hover {
-    background-color: var(--primary-color); /* Change background color on hover */
-    color: var(--tertiary-color); /* Change text color on hover */
-    transform: scale(1.05); /* Smoothly increase size on hover */
+    background-color: var(--secondary-color);
+    color: var(--tertiary-color);
+    transform: translateX(10px); /* Shift slightly on hover */
+}
+
+/* Body content */
+.content {
+    padding: 20px;
+    background-color: #456990; /* Just for visibility */
+    height: 100vh;
 }
