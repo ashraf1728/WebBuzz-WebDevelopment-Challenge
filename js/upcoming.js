@@ -1,32 +1,25 @@
-const container = document.querySelector('.scroll-container');
-const content = document.querySelector('.content');
+document.addEventListener('DOMContentLoaded', () => {
+    const imageContainer = document.querySelector('.image-container');
+    const images = Array.from(imageContainer.children);
+    
+    let currentImageIndex = 0;
 
-// Duplicate images for seamless effect
-const images = Array.from(content.children);
-images.forEach(image => content.appendChild(image.cloneNode(true)));
+    // Function to show the next image
+    function showNextImage() {
+        // Hide the current image
+        images[currentImageIndex].style.display = 'none';
 
-let scrollInterval;
+        currentImageIndex = (currentImageIndex + 1) % images.length; // Loop back to the first image
 
-// Function to handle auto-scrolling
-function startAutoScroll() {
-    scrollInterval = setInterval(() => {
-        // Scroll manually to create a smooth effect
-        container.scrollLeft += 1;
-        // Reset scroll position to create seamless effect
-        if (container.scrollLeft >= content.scrollWidth / 2) {
-            container.scrollLeft = 0;
-        }
-    }, 20); // Adjust speed as needed
-}
+        // Show the next image
+        images[currentImageIndex].style.display = 'block';
+    }
 
-// Function to stop auto-scrolling
-function stopAutoScroll() {
-    clearInterval(scrollInterval);
-}
+    // Initially hide all images except the first one
+    images.forEach((img, index) => {
+        img.style.display = index === 0 ? 'block' : 'none';
+    });
 
-// Event listeners for manual scrolling
-container.addEventListener('mouseenter', stopAutoScroll);
-container.addEventListener('mouseleave', startAutoScroll);
-
-// Start auto-scrolling on page load
-startAutoScroll();
+    // Show images at intervals
+    setInterval(showNextImage, 2000); // Change image every 2 seconds
+});

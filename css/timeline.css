@@ -28,6 +28,10 @@ body {
 .intro {
     background: var(--primary-color);
     padding: 100px 0;
+    /* if you want the top to be sticky uncomment the code  below */
+    /* position: sticky;
+    top: 5vh;
+    z-index: 50; */
 }
 
 .container {
