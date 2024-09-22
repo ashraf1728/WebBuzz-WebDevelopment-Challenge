@@ -1,0 +1,83 @@
+:root {
+    --primary-color: #f45b69; /* Example primary color */
+    --secondary-color: #456990; /* Example secondary color */
+    --tertiary-color: #fff;
+}
+body{
+    font-family: 'Poppins', sans-serif;
+    z-index: 1000;
+}
+
+/* Navbar collapse (menu) hidden by default */
+.navbar-collapse {
+    display: none;
+    opacity: 0;
+    transition: opacity 0.5s ease; /* Smooth transition for showing/hiding */
+}
+
+/* Show navbar-collapse when the show class is added */
+.navbar-collapse.show {
+    display: block;
+    opacity: 1;
+    transition: opacity 0.5s ease; /* Smooth transition for showing/hiding */
+}
+
+/* Basic styling for the toggle button */
+.navbar-toggle {
+    cursor: pointer;
+    background-color: var(--primary-color);
+    border: none;
+    padding: 10px;
+    color: var(--secondary-color);
+    font-size: 16px;
+    transition: background-color 0.3s ease, color 0.3s ease; /* Add smooth transitions */
+}
+
+.navbar-toggle:hover {
+    background-color: var(--tertiary-color); /* Change background on hover */
+    color: var(--primary-color); /* Change text color on hover */
+}
+
+.icon-bar {
+    display: block;
+    width: 22px;
+    height: 2px;
+    background-color: var(--secondary-color);
+    margin: 4px 0;
+    transition: background-color 0.3s ease; /* Smooth transition for icon color */
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: var(--primary-color);
+    border: 0px 0px;
+    padding: 0px 20px;
+    transition: background-color 0.3s ease; /* Smooth background color change */
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.brand a {
+    color: var(--tertiary-color);
+    text-decoration: none;
+    font-size: 1.5em;
+}
+
+.nav-elements {
+    background-color: var(--tertiary-color);
+    color: var(--secondary-color);
+    font-size: larger;
+    padding: 10px;
+    text-align: center;
+    transition: background-color 0.3s ease, color 0.3s ease, transform 0.3s ease;
+}
+
+/* Add hover effect to nav-elements */
+.nav-elements:hover {
+    background-color: var(--primary-color); /* Change background color on hover */
+    color: var(--tertiary-color); /* Change text color on hover */
+    transform: scale(1.05); /* Smoothly increase size on hover */
+}
