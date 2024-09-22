@@ -9,6 +9,7 @@ body, html {
     padding: 0;
     height: 100%;
     background-color: var(--primary-color);
+    cursor: url('resources/images/124163.cur'), auto; /* Custom cursor */
 }
 
 .image-container {
