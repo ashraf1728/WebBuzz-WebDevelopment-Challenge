@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Multi Step Form</title>
+    <link rel="stylesheet" href="signUp.css" />
+</head>
+
+<body>
+    <div id="page" class="site">
+        <div class="container">
+            <div class="form-box">
+                <div class="progress">
+                    <div class="logo">
+                        <a href="/"><span>.web</span>Buzz</a>
+                    </div>
+                    <ul class="progress-steps">
+                        <li class="step active">
+                            <span>1</span>
+                            <p>Personal<br /><span>25 secs to complete</span></p>
+                        </li>
+                        <li class="step">
+                            <span>2</span>
+                            <p>Contact<br /><span>60 secs to complete</span></p>
+                        </li>
+                        <li class="step">
+                            <span>3</span>
+                            <p>Security<br /><span>30 secs to complete</span></p>
+                        </li>
+                    </ul>
+                </div>
+
+                <form action="">
+                    <!-- Step 1: Personal Information -->
+                    <div class="form-one form-step">
+                        <h2>Personal Information</h2>
+                        <p>Enter your personal information</p>
+                        <div>
+                            <label>First Name</label>
+                            <input type="text" name="firstName" placeholder="e.g. Adnan" />
+                        </div>
+                        <div>
+                            <label>Last Name</label>
+                            <input type="text" name="lastName" placeholder="e.g. Abrar" />
+                        </div>
+                        <div class="birth">
+                            <label>Date of Birth</label>
+                            <div class="grouping">
+                                <input type="text" pattern="[0-9]*" name="day" placeholder="DD" min="1" max="31" />
+                                <input type="text" pattern="[0-9]*" name="month" placeholder="MM" min="1" max="12" />
+                                <input type="text" pattern="[0-9]*" name="year" placeholder="YYYY" min="1900"
+                                    max="2050" />
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Step 2: Contact Information -->
+                    <div class="form-two form-step">
+                        <h2>Contact</h2>
+                        <div>
+                            <label>Phone</label>
+                            <input type="tel" name="phone" placeholder="+91xxXXXX" />
+                        </div>
+                        <div>
+                            <label>Address</label>
+                            <input type="text" name="address" placeholder="Street Address" />
+                        </div>
+                        <div>
+                            <input type="text" name="apartment" placeholder="App, Suite, Building" />
+                        </div>
+                        <div>
+                            <label>City</label>
+                            <input type="text" name="city" placeholder="City" />
+                        </div>
+                        <div>
+                            <label>State</label>
+                            <input type="text" name="state" placeholder="State/Province" />
+                        </div>
+                        <div>
+                            <label>Zip Code</label>
+                            <input type="text" name="zipCode" placeholder="Postal/Zip code" />
+                        </div>
+                        <div>
+                            <label>Country</label>
+                            <select name="country" id="country">
+                                <option value="">Please select</option>
+                                <option value="Afghanistan">Afghanistan</option>
+                                <option value="Afghanistan">Afghanistan</option>
+                                <!-- Add the rest of the country options here -->
+                                
+                                <option value="Zimbabwe">Zimbabwe</option>
+                            </select>
+                        </div>
+                    </div>
+                    <!-- Step 3: Security Information -->
+                    <div class="form-three form-step">
+                        <h2>Security</h2>
+                        <div>
+                            <label>Email</label>
+                            <input type="email" placeholder="Your email address" />
+                        </div>
+                        <div>
+                            <label>Username</label>
+                            <input type="text" placeholder="Username" />
+                        </div>
+                        <div>
+                            <label>Password</label>
+                            <input type="password" placeholder="Password" />
+                        </div>
+                        <div>
+                            <label>Confirm Password</label>
+                            <input type="password" placeholder="Confirm Password" />
+                        </div>
+                        <div class="checkbox">
+                            <input type="checkbox" />
+                            <span>Receive our newsletter and special offers</span>
+                        </div>
+                    </div>
+                    <div class="btn-group">
+                        <button type="button" class="btn-prev" disabled>Back</button>
+                        <button type="button" class="btn-next">Next Step</button>
+                        <button type="button" class="btn-submit">Submit</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <script src="signUp.js"></script>
+</body>
+</html>
