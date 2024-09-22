@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Auto Scrolling Container</title>
+    <link rel="stylesheet" href="css/upcoming.css">
+    <link rel="stylesheet" href="css/style.css"> <!-- Link to navbar CSS -->
+    <script src="js/navbar.js" defer></script>
+</head>
+<body>
+    <div id="navbar"></div>
+
+    <script>
+        function loadNavbar() {
+            fetch('navbar.html')
+                .then(response => response.text())
+                .then(data => {
+                    document.getElementById('navbar').innerHTML = data;
+                    initializeNavbar();
+                })
+                .catch(error => console.error('Error loading navbar:', error));
+        }
+
+        window.onload = loadNavbar;
+    </script>
+    <div class="scroll-container">
+        <div class="content">
+            <div class="img-cont"><img src="resources/images/download.jpeg" alt="Image 1" /></div>
+            <div class="img-cont"><img src="resources/images/download.jpeg" alt="Image 1" /></div>
+            <div class="img-cont"><img src="resources/images/download.jpeg" alt="Image 1" /></div>
+            <div class="img-cont"><img src="resources/images/download.jpeg" alt="Image 1" /></div>
+        </div>
+    </div>
+    <div><h1>All upcoming events</h1></div>
+    <div class="card-container">
+        <div class="card"><img src="resources/images/download.jpeg" alt="Image 1" /></div>
+        <div class="card">Card 2</div>
+        <div class="card">Card 3</div>
+        <div class="card">Card 4</div>
+        <div class="card">Card 5</div>
+        <div class="card">Card 6</div>
+        <div class="card">Card 6</div>
+        <div class="card">Card 6</div>
+
+    </div>
+    <script src="js/upcoming.js"></script>
+</body>
+</html>

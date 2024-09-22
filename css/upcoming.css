@@ -1,0 +1,94 @@
+:root {
+    --primary-color: #f45b69;
+    --secondary-color: #456990;
+    --tertiary-color: #fff;
+}
+body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    /* overflow: hidden;  */
+    background-color: var(--primary-color);
+}
+
+.scroll-container {
+    height: 40vh; /* 40% of the viewport height */
+    width: 100%; /* Full width */
+    overflow-x: auto; /* Enable horizontal scrolling */
+    border: 1px solid var(--primary-color);
+    position: relative;
+    white-space: nowrap; /* Prevent line breaks in content */
+    scrollbar-width: none; /* For Firefox */
+}
+
+/* For WebKit browsers (Chrome, Safari) */
+.scroll-container::-webkit-scrollbar {
+    display: none; /* Hide scrollbar */
+}
+
+.content {
+    display: inline-flex; /* Use inline-flex for horizontal layout */
+    height: 100%; /* Full height of the container */
+}
+
+.content img {
+    height: 100%; /* Make images fit the container height */
+    width: auto; /* Maintain aspect ratio */
+    margin-right: 10px; /* Space between images */
+}
+
+/* Animation class for continuous scrolling */
+.scroll {
+    animation: scroll 20s linear infinite; /* Continuous scrolling */
+}
+
+/* Keyframes for scrolling animation */
+@keyframes scroll {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-50%); } /* Scroll halfway for seamless effect */
+}
+#navbar {
+    position: sticky;
+    top: 0;
+    z-index: 1000; /* Ensures it stays on top of other elements */
+    width: 100%;
+    background-color: var(--primary-color); /* Example background color */
+}
+.card-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* 3 cards per row */
+    gap: 20px; /* Space between cards */
+}
+
+.card {
+    background-color: var(--secondary-color);
+    box-shadow: var(--secondary-color);
+    border-radius: 8px;
+    padding: 20px;
+    text-align: center;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s;
+}
+
+.card:hover {
+    transform: scale(1.05); /* Scale effect on hover */
+}
+@media (max-width: 768px) {
+    .card-container {
+        grid-template-columns: repeat(2, 1fr); /* 2 cards per row on medium screens */
+    }
+
+    .card {
+        flex: 1 1 calc(50% - 20px); /* 2 cards per row on medium screens */
+    }
+}
+
+@media (max-width: 480px) {
+    .card-container {
+        grid-template-columns: 1fr; /* 1 card per row on small screens */
+    }
+
+    .card {
+        flex: 1 1 100%; /* 1 card per row on small screens */
+    }
+}
