@@ -1,0 +1,246 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #060101;
+    color: #333;
+  }
+
+  /* Hero Banner Section */
+  .hero {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+  }
+
+  .hero video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -1;
+  }
+
+  .hero-content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    color: white;
+    z-index: 1;
+  }
+
+  .hero-content h1 {
+    font-size: 4rem;
+    font-weight: 600;
+  }
+
+  .hero-content p {
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+  }
+
+  .hero-content a {
+    padding: 12px 30px;
+    background-color: #ff5722;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 1.2rem;
+  }
+
+  .hero-content a:hover {
+    background-color: #e64a19;
+  }
+
+  /* Upcoming Features & Fixtures Section */
+  .fixtures {
+    padding: 50px 10%;
+    text-align: center;
+  }
+
+  .fixtures h2 {
+    font-size: 2.5rem;
+    margin-bottom: 30px;
+  }
+
+  .countdown {
+    font-size: 2rem;
+    font-weight: 600;
+    margin-top: 20px;
+  }
+
+  .fixture-card {
+    background-image: url('your-background.jpg');
+    background-size: cover;
+    background-position: center;
+    padding: 20px;
+    margin-bottom: 20px;
+    color: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  }
+
+  .fixture-card h3 {
+    font-size: 1.8rem;
+    margin-bottom: 10px;
+  }
+
+  /* Sponsors Section */
+  .sponsors {
+    background-color: #fff;
+    padding: 50px 10%;
+    text-align: center;
+  }
+
+  .sponsors h2 {
+    font-size: 2.5rem;
+    margin-bottom: 30px;
+  }
+
+  .sponsor-logos {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+  }
+
+  .sponsor-logos img {
+    max-width: 150px;
+    padding: 10px;
+  }
+
+  /* Fan Polls & Quizzes Section */
+  .fan-polls {
+    padding: 50px 10%;
+    background-color: #f1f1f1;
+    text-align: center;
+  }
+
+  .fan-polls h2 {
+    font-size: 2.5rem;
+    margin-bottom: 30px;
+  }
+
+  .polls, .quizzes {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .poll, .quiz {
+    background-color: white;
+    padding: 20px;
+    margin: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    width: 45%;
+  }
+
+  .poll h3, .quiz h3 {
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+  }
+
+  .leaderboard {
+    margin-top: 20px;
+    font-size: 1rem;
+    text-align: left;
+  }
+
+  /* News Updates Section */
+  .news-updates {
+    padding: 50px 10%;
+  }
+
+  .news-updates h2 {
+    font-size: 2.5rem;
+    margin-bottom: 30px;
+    text-align: center;
+  }
+
+  .news-container {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+  }
+
+  .news-card {
+    background-color: white;
+    width: 30%;
+    margin-bottom: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    overflow: hidden;
+  }
+
+  .news-card img {
+    width: 100%;
+    height: auto;
+  }
+
+  .news-card p {
+    padding: 20px;
+    font-size: 1.1rem;
+  }
+
+  /* Interactive Historical Moments Section */
+  .historical-moments {
+    padding: 50px 10%;
+    background-color: #222;
+    color: white;
+    text-align: center;
+  }
+
+  .historical-moments h2 {
+    font-size: 2.5rem;
+    margin-bottom: 30px;
+  }
+
+  .moments-gallery {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+  }
+
+  .moment {
+    width: 30%;
+    margin-bottom: 20px;
+    background-color: #333;
+    padding: 20px;
+    border-radius: 10px;
+  }
+
+  .moment h3 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+  }
+
+  .moment p {
+    font-size: 1.1rem;
+  }
+
+  /* Responsive Design */
+  @media screen and (max-width: 768px) {
+    .fixtures, .sponsors, .fan-polls, .news-updates, .historical-moments {
+      padding: 20px 5%;
+    }
+
+    .fan-polls .polls, .fan-polls .quizzes {
+      flex-direction: column;
+    }
+
+    .news-container, .moments-gallery {
+      flex-direction: column;
+    }
+
+    .news-card, .moment {
+      width: 100%;
+    }
+  }
