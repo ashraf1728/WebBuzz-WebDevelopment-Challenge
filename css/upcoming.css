@@ -8,8 +8,7 @@ body, html {
     margin: 0;
     padding: 0;
     height: 100%;
-    background-color: var(--primary-color);
-    cursor: url('resources/images/124163.cur'), auto; /* Custom cursor */
+    background-color: var(--primary-color); /* Custom cursor */
 }
 
 .image-container {
