@@ -38,9 +38,6 @@ body {
     border: none;
     color: var(--tertiary-color);
     font-size: 16px;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
     height: 45px;
     width: 45px;
 }
@@ -48,18 +45,6 @@ body {
 .navbar-toggle:hover {
     box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
     cursor: pointer;
-}
-
-.icon-bar {
-    width: 100%;
-    background-color: var(--primary-color);
-    transition: background-color 0.3s ease;
-    height: 45px;
-    width: 45px;
-}
-.icon-bar img{
-    height: 45px;
-    width: 45px;
 }
 
 /* The sliding navbar menu (hidden by default) */
@@ -101,4 +86,35 @@ body {
     padding: 20px;
     background-color: #456990; /* Just for visibility */
     height: 100vh;
+}
+
+/* Media Queries for Mobile Compatibility */
+@media (max-width: 768px) {
+    .header {
+        /* flex-direction: column;  */
+        height: auto; /* Adjust height */
+    }
+
+    .brand a {
+        font-size: 1.2em; /* Smaller font size on mobile */
+    }
+
+    .navbar-toggle {
+        width: 40px; /* Adjust toggle size */
+        height: 40px;
+    }
+
+    .navbar-collapse {
+        width: 80%; /* Wider on mobile */
+        left: -80%; /* Hidden off-screen */
+    }
+
+    .navbar-collapse.show {
+        left: 0; /* Slide in from the left */
+    }
+
+    .nav-elements {
+        font-size: 16px; /* Smaller font size */
+        padding: 10px 15px; /* Adjust padding */
+    }
 }

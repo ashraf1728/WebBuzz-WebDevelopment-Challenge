@@ -54,4 +54,18 @@
         });
     });
 })();
-  
+
+document.addEventListener('DOMContentLoaded', function () {
+    const openOverlayLink = document.getElementById('openOverlay');
+    const overlay = document.getElementById('overlay');
+    const closeOverlayButton = document.getElementById('closeOverlay');
+
+    openOverlayLink.addEventListener('click', function (event) {
+        event.preventDefault();
+        overlay.classList.remove('hidden');
+    });
+
+    closeOverlayButton.addEventListener('click', function () {
+        overlay.classList.add('hidden');
+    });
+})();
