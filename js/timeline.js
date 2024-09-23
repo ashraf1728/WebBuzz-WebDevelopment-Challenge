@@ -55,17 +55,13 @@
     });
 })();
 
-document.addEventListener('DOMContentLoaded', function () {
-    const openOverlayLink = document.getElementById('openOverlay');
-    const overlay = document.getElementById('overlay');
-    const closeOverlayButton = document.getElementById('closeOverlay');
-
-    openOverlayLink.addEventListener('click', function (event) {
-        event.preventDefault();
-        overlay.classList.remove('hidden');
+document.querySelectorAll('#openOverlay').forEach(item => {
+    item.addEventListener('click', (e) => {
+        e.preventDefault();
+        document.getElementById('overlay').classList.remove('hidden');
     });
+});
 
-    closeOverlayButton.addEventListener('click', function () {
-        overlay.classList.add('hidden');
-    });
-})();
+document.getElementById('closeOverlay').addEventListener('click', () => {
+    document.getElementById('overlay').classList.add('hidden');
+});

@@ -5,6 +5,7 @@
 }
 
 body {
+    width: 100vw;
     font-family: 'Poppins', sans-serif;
     margin: 0;
     padding: 0;
@@ -12,6 +13,7 @@ body {
 }
 
 .header {
+    width: 95vw;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -90,10 +92,9 @@ body {
 
 /* Media Queries for Mobile Compatibility */
 @media (max-width: 768px) {
-    .header {
-        /* flex-direction: column;  */
-        height: auto; /* Adjust height */
-    }
+.header{
+    width: 90vw;
+}
 
     .brand a {
         font-size: 1.2em; /* Smaller font size on mobile */
