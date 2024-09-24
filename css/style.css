@@ -5,7 +5,6 @@
 }
 
 body {
-    width: 100vw;
     font-family: 'Poppins', sans-serif;
     margin: 0;
     padding: 0;
@@ -13,7 +12,6 @@ body {
 }
 
 .header {
-    width: 95vw;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -33,6 +31,18 @@ body {
     font-size: 1.5em;
 }
 
+.navbar-collapse a{
+    text-decoration: none;
+}
+.navbar-collapse .down{
+    color: var(--secondary-color);
+    font-weight: bolder;
+    font-size: 15px;
+    padding: 15px 20px;
+    position: absolute;
+    bottom: 10px;
+}
+
 /* Navbar toggle icon on the left */
 .navbar-toggle {
     background-image: url('image1.png'); /* Default image */
@@ -40,13 +50,29 @@ body {
     border: none;
     color: var(--tertiary-color);
     font-size: 16px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
     height: 45px;
     width: 45px;
 }
 
 .navbar-toggle:hover {
-    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.6);
     cursor: pointer;
+    border-radius: 50px;
+}
+
+.icon-bar {
+    width: 100%;
+    background-color: var(--primary-color);
+    transition: background-color 0.3s ease;
+    height: 45px;
+    width: 45px;
+}
+.icon-bar img{
+    height: 45px;
+    width: 45px;
 }
 
 /* The sliding navbar menu (hidden by default) */
@@ -90,32 +116,31 @@ body {
     height: 100vh;
 }
 
-/* Media Queries for Mobile Compatibility */
-@media (max-width: 768px) {
-.header{
-    width: 90vw;
-}
 
-    .brand a {
-        font-size: 1.2em; /* Smaller font size on mobile */
-    }
+.hide {
+    display: none;
+  }
 
-    .navbar-toggle {
-        width: 40px; /* Adjust toggle size */
-        height: 40px;
-    }
+  .logged-in-user {
+    font-weight: bolder;
+    font-size: 20px;
+    padding: 15px 20px;
+  }
 
-    .navbar-collapse {
-        width: 80%; /* Wider on mobile */
-        left: -80%; /* Hidden off-screen */
-    }
+  .navbar-collapse a {
+    text-decoration: none;
+    color: aliceblue;
+  }
 
-    .navbar-collapse.show {
-        left: 0; /* Slide in from the left */
-    }
+  .navbar-collapse .bottom {
+    color: var(--secondary-color);
+    font-weight: bolder;
+    font-size: 15px;
+    padding: 15px 20px;
+    position: absolute;
+    bottom: 20px;
+  }
 
-    .nav-elements {
-        font-size: 16px; /* Smaller font size */
-        padding: 10px 15px; /* Adjust padding */
-    }
-}
+  .Logout{
+    cursor: pointer;
+  }
