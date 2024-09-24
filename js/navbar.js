@@ -1,4 +1,5 @@
 // Function to toggle the navbar menu
+
 function toggleNavbar() {
   const navbarCollapse = document.getElementById('navbar-collapse');
   navbarCollapse.classList.toggle('show'); // Toggle the sliding menu
@@ -23,6 +24,18 @@ function initializeNavbar() {
       });
   }
 }
+    
 
 // Initialize the event listeners once the DOM is fully loaded
 document.addEventListener('DOMContentLoaded', initializeNavbar);
+
+    // Check if the user is logged in by checking localStorage
+    const loggedInUser = localStorage.getItem('loggedInUser');
+    const loginLink = document.getElementById('login-link');
+
+    if (loggedInUser) {
+        // Replace the login link with the username
+        loginLink.innerHTML = `<div class="nav-elements">${loggedInUser}</div>`;
+        loginLink.href = '#'; // Optional: change the link to something else if needed
+    }
+// Check if the user is logged in by checking localStorage
