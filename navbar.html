@@ -22,15 +22,3 @@
     <div class="nav-elements">Settings</div>
     <div class="nav-elements">About</div>
 </div>
-
-<script>
-    // Check if the user is logged in by checking localStorage
-    const loggedInUser = localStorage.getItem('loggedInUser');
-    const loginLink = document.getElementById('login-link');
-
-    if (loggedInUser) {
-        // Replace the login link with the username
-        loginLink.innerHTML = `<div class="nav-elements">${loggedInUser}</div>`;
-        loginLink.href = '#'; // Optional: change the link to something else if needed
-    }
-</script>
