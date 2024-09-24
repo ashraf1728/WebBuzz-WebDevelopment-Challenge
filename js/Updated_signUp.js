@@ -146,6 +146,10 @@ const submitForm = async () => {
         // Remove confirmPassword from the object as it's not needed for the backend
         newsletter: document.querySelector('input[type="checkbox"]')?.checked || false,
     };
+    alert("SignUp successful! , Login to continue")
+    window.location.href = "login.html";
+    console.log("tryingg.....");
+    
 
     try {
         // Update the fetch URL to point to the correct server port
@@ -167,9 +171,5 @@ const submitForm = async () => {
         alert('An error occurred. Please try again.');
     }
 };
-
-
-
-
 // Initialize button states on page load
 updateProgress();
