@@ -466,6 +466,20 @@ time {
 .timeline ul li::after {
     transition: background 0.5s ease-in-out;
 }
+#closeOverlay{
+    padding: 7px 10px;
+    border: none;
+    box-shadow: inset;
+    background-color: red;
+    color: #fff;
+    border-radius: 50px;
+   
+}
+#butDiv {
+    display: flex;
+    justify-content: flex-end; /* Align the button to the right */
+    padding: 10px; /* Optional: add padding for some space */
+  }
 
 /* MEDIA QUERIES FOR MOBILE COMPATIBILITY */
 @media (max-width: 768px) {
