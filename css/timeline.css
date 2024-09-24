@@ -394,26 +394,39 @@ time {
     overflow-y: auto;
 }
 
-.img-cont {
+/* .img-cont {
     flex: 0 0 auto;
-    /* Prevent items from shrinking */
     width: 100px;
-    /* Width of each image container */
     height: 100px;
-    /* Height of each image container */
     border-radius: 50%;
-    /* Circular shape */
     background-color: var(--primary-color);
-    /* Background color */
     display: flex;
     justify-content: center;
     align-items: center;
     margin: 0 10px;
-    /* Margin between images */
     color: white;
-    /* Text color */
     font-size: 24px;
-    /* Font size */
+} */
+.img-cont {
+    text-align: center;
+    display: inline-block;
+    margin: 10px;
+    width: 100px; /* Adjust width according to the size you prefer */
+}
+
+.img-cont img {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%; /* Makes the image circular */
+    object-fit: cover; /* Ensures the image fits well within the circle */
+    border: 2px solid #ddd; /* Optional border */
+}
+
+.img-cont p {
+    margin-top: 5px;
+    font-size: 14px;
+    color: #333;
+    font-family: Arial, sans-serif;
 }
 
 .team::-webkit-scrollbar {
@@ -459,6 +472,7 @@ time {
     border: 1px solid #ccc;
     /* Border for each item */
     border-radius: 5px;
+    color: #456990;
     /* Rounded corners for items */
 }
 
