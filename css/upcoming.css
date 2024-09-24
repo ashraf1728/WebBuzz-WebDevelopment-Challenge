@@ -42,7 +42,6 @@ body, html {
 }
 
 #navbar {
-    width: 80vw;
     position: sticky;
     top: 0;
     z-index: 1000; /* Ensures it stays on top of other elements */
@@ -68,6 +67,34 @@ body, html {
 .card:hover {
     transform: scale(1.05); /* Scale effect on hover */
 }
+
+.hide {
+    display: none;
+  }
+
+  .logged-in-user {
+    font-weight: bolder;
+    font-size: 20px;
+    padding: 15px 20px;
+  }
+
+  .navbar-collapse a {
+    text-decoration: none;
+    color: aliceblue;
+  }
+
+  .navbar-collapse .bottom {
+    color: var(--secondary-color);
+    font-weight: bolder;
+    font-size: 15px;
+    padding: 15px 20px;
+    position: absolute;
+    bottom: 20px;
+  }
+  .Logout{
+    cursor: pointer;
+  }
+
 
 @media (max-width: 768px) {
     .card-container {
