@@ -1,27 +1,28 @@
 document.addEventListener('DOMContentLoaded', () => {
-    const imageContainer = document.querySelector('.image-container');
-    const images = Array.from(imageContainer.children);
-    
-    let currentImageIndex = 0;
+  const imageContainer = document.querySelector('.image-container');
+  const images = Array.from(imageContainer.children);
 
-    // Function to show the next image
-    function showNextImage() {
-        // Hide the current image
-        images[currentImageIndex].style.display = 'none';
+  let currentImageIndex = 0;
 
-        currentImageIndex = (currentImageIndex + 1) % images.length; // Loop back to the first image
+  // Function to show the next image
+  function showNextImage() {
+      // Hide the current image (both background and foreground)
+      images[currentImageIndex].style.display = 'none';
 
-        // Show the next image
-        images[currentImageIndex].style.display = 'block';
-    }
+      // Move to the next image index
+      currentImageIndex = (currentImageIndex + 1) % images.length;
 
-    // Initially hide all images except the first one
-    images.forEach((img, index) => {
-        img.style.display = index === 0 ? 'block' : 'none';
-    });
+      // Show the next image (both background and foreground)
+      images[currentImageIndex].style.display = 'block';
+  }
 
-    // Show images at intervals
-    setInterval(showNextImage, 2000); // Change image every 2 seconds
+  // Initially hide all images except the first one
+  images.forEach((img, index) => {
+      img.style.display = index === 0 ? 'block' : 'none';
+  });
+
+  // Show images at intervals
+  setInterval(showNextImage, 2000); // Change image every 2 seconds
 });
 
 // Clear login state on fresh page load

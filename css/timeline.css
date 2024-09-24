@@ -33,7 +33,7 @@ body {
 /* Container with padding for better alignment on small screens */
 .container {
     width: 90%;
-    max-width: 1200px;
+    max-width: 100vw;
     margin: 0 auto;
     text-align: center;
     padding: 0 20px;
@@ -355,7 +355,7 @@ time {
 
 .overlay {
     position: fixed;
-    top: 0;
+    top: 5vh;
     left: 0;
     width: 100%;
     height: 100%;
@@ -523,6 +523,7 @@ time {
     .timeline ul {
         margin-left: 20px; /* Reset margin if necessary */
         padding-left: 0; /* Reset padding if necessary */
+        width: 80vw;
     }
     
     .timeline ul li {
@@ -532,19 +533,20 @@ time {
         /* You might also want to adjust width or other styles here */
     }
     #overlay{
-        width: 80vw;
+        width: 100vw;
     }
     .overlay-content {
         background: white;
         padding: 20px;
         border-radius: 8px;
-        max-width: 90%;
-        /* Responsive max width */
-        width: 900px;
+        width: 90%;
+        height: 80%;
         /* Fixed width for larger screens */
         box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        top: 0;
         overflow: hidden;
         /* Prevent overflow */
     }
 
 }
+
