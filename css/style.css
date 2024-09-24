@@ -1,7 +1,7 @@
 :root {
-    --primary-color: #f45b69; /* Primary color */
-    --secondary-color: #456990; /* Secondary color */
-    --tertiary-color: #fff;     /* White */
+    --primary-color: #50223C; /* Primary color */
+    --secondary-color: #F0DAC5; /* Secondary color */
+    --tertiary-color: #040404;     /* White */
 }
 
 body {
@@ -15,7 +15,8 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-color: var(--primary-color);
+    background: radial-gradient(#ffffff, #f0dac5);
+    /* background: var(--secondary-color); */
     padding: 10px 20px;
     position: sticky;
     top: 0;
@@ -65,7 +66,7 @@ body {
 
 .icon-bar {
     width: 100%;
-    background-color: var(--primary-color);
+    /* background-color: var(--primary-color); */
     transition: background-color 0.3s ease;
     height: 45px;
     width: 45px;
@@ -97,7 +98,7 @@ body {
 /* Navbar elements styling */
 .nav-elements {
     padding: 15px 20px;
-    color: var(--tertiary-color);
+    color: var(--secondary-color);
     font-size: 18px;
     background-color: var(--primary-color);
     transition: background-color 0.3s, transform 0.3s ease;
