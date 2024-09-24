@@ -168,5 +168,8 @@ const submitForm = async () => {
     }
 };
 
+
+
+
 // Initialize button states on page load
 updateProgress();
