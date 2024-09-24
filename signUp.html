@@ -12,20 +12,35 @@
   </head>
 
   <body>
-    <div id="navbar"></div>
-    <script>
-      console.log("entered scr");
-      function loadNavbar() {
-        fetch("navbar.html")
-          .then((response) => response.text())
-          .then((data) => {
-            document.getElementById("navbar").innerHTML = data;
-            initializeNavbar();
-          })
-          .catch((error) => console.error("Error loading navbar:", error));
-      }
-      window.onload = loadNavbar;
-    </script>
+    <div id="navbar">
+      <div class="header">
+        <!-- Menu icon on the left -->
+        <div class="navbar-toggle" id="navbar-toggle">
+          <div class="icon-bar">
+            <img id="navbar-icon" src="resources/images/cricket-wicket-filled-stroke-by-Vexels.svg" alt="bat" />
+          </div>
+        </div>
+  
+        <!-- Logo on the right -->
+        <div class="brand">
+          <a href="home.html">Logo</a>
+        </div>
+      </div>
+  
+      <!-- The sidebar menu -->
+      <div class="navbar-collapse" id="navbar-collapse">
+        <a href="login.html" id="login-link">
+          <div class="nav-elements">Login</div>
+        </a>
+        <a href="upcoming.html">
+          <div class="nav-elements">Upcoming events</div>
+        </a>
+        <div class="nav-elements">Contact</div>
+        <div class="nav-elements">Settings</div>
+        <div class="nav-elements">About</div>
+        <div class="Logout hide bottom">Logout</div>
+      </div>
+    </div>
     <div id="page" class="site">
       <div class="container">
         <div class="form-box">
