@@ -1,7 +1,7 @@
 :root {
-    --primary-color: #f45b69;
-    --secondary-color: #456990;
-    --tertiary-color: #fff;
+    --primary-color: #50223C; /* Primary color */
+    --secondary-color: #F0DAC5; /* Secondary color */
+    --tertiary-color: #040404;
 }
 
 *,
@@ -19,7 +19,7 @@ a {
 body {
     font-family: 'Poppins', sans-serif;
     background: var(--secondary-color);
-    color: var(--tertiary-color);
+    color: white;
     overflow-x: hidden;
     padding-bottom: 50px;
 }
@@ -33,7 +33,7 @@ body {
 /* Container with padding for better alignment on small screens */
 .container {
     width: 90%;
-    max-width: 100vw;
+    max-width: 1200px;
     margin: 0 auto;
     text-align: center;
     padding: 0 20px;
@@ -355,7 +355,7 @@ time {
 
 .overlay {
     position: fixed;
-    top: 5vh;
+    top: 0;
     left: 0;
     width: 100%;
     height: 100%;
@@ -394,39 +394,26 @@ time {
     overflow-y: auto;
 }
 
-/* .img-cont {
+.img-cont {
     flex: 0 0 auto;
+    /* Prevent items from shrinking */
     width: 100px;
+    /* Width of each image container */
     height: 100px;
+    /* Height of each image container */
     border-radius: 50%;
+    /* Circular shape */
     background-color: var(--primary-color);
+    /* Background color */
     display: flex;
     justify-content: center;
     align-items: center;
     margin: 0 10px;
+    /* Margin between images */
     color: white;
+    /* Text color */
     font-size: 24px;
-} */
-.img-cont {
-    text-align: center;
-    display: inline-block;
-    margin: 10px;
-    width: 100px; /* Adjust width according to the size you prefer */
-}
-
-.img-cont img {
-    width: 100px;
-    height: 100px;
-    border-radius: 50%; /* Makes the image circular */
-    object-fit: cover; /* Ensures the image fits well within the circle */
-    border: 2px solid #ddd; /* Optional border */
-}
-
-.img-cont p {
-    margin-top: 5px;
-    font-size: 14px;
-    color: #333;
-    font-family: Arial, sans-serif;
+    /* Font size */
 }
 
 .team::-webkit-scrollbar {
@@ -472,7 +459,6 @@ time {
     border: 1px solid #ccc;
     /* Border for each item */
     border-radius: 5px;
-    color: #456990;
     /* Rounded corners for items */
 }
 
@@ -480,27 +466,13 @@ time {
 .timeline ul li::after {
     transition: background 0.5s ease-in-out;
 }
-#closeOverlay{
-    padding: 7px 10px;
-    border: none;
-    box-shadow: inset;
-    background-color: red;
-    color: #fff;
-    border-radius: 50px;
-   
-}
-#butDiv {
-    display: flex;
-    justify-content: flex-end; /* Align the button to the right */
-    padding: 10px; /* Optional: add padding for some space */
-  }
 
 /* MEDIA QUERIES FOR MOBILE COMPATIBILITY */
 @media (max-width: 768px) {
     body {
         font-family: 'Poppins', sans-serif;
         background: var(--secondary-color);
-        color: var(--tertiary-color);
+        color: white;
         overflow-x: hidden;
     }
 
@@ -551,7 +523,6 @@ time {
     .timeline ul {
         margin-left: 20px; /* Reset margin if necessary */
         padding-left: 0; /* Reset padding if necessary */
-        width: 80vw;
     }
     
     .timeline ul li {
@@ -561,20 +532,19 @@ time {
         /* You might also want to adjust width or other styles here */
     }
     #overlay{
-        width: 100vw;
+        width: 80vw;
     }
     .overlay-content {
         background: white;
         padding: 20px;
         border-radius: 8px;
-        width: 90%;
-        height: 80%;
+        max-width: 90%;
+        /* Responsive max width */
+        width: 900px;
         /* Fixed width for larger screens */
         box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-        top: 0;
         overflow: hidden;
         /* Prevent overflow */
     }
 
 }
-
