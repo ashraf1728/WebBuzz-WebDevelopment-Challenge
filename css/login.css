@@ -1,13 +1,13 @@
 :root {
-    --main-color: #6c5ce7;
+    --main-color: #F0DAC5;
     --secondary-color: #a29bfe;
-    --lighter-color: #e0e0e7;
-    --light-color: #b0b0c0;
-    --dark-color: #52505e;
-    --input-bg: #f2f0fb;
-    --input-border: #ddd;
+    --lighter-color: #1C2340;
+    --light-color: #50223C;
+    --dark-color: #b9b3d7;
     --font-smaller: 14px;
     --font-bigger: 20px;
+    --input-bg: #f2f0fb;
+    --input-border: #ddd;
 }
 
 /* Common Styling */
@@ -44,9 +44,9 @@ a {
     flex-direction: column;
     gap: 15px;
     padding: 2em;
-    border: 8px solid var(--lighter-color);
+    border: 8px solid var(--light-color);
     border-radius: 15px;
-    background-color: var(--input-bg);
+    background-color: var(--light-color);
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     max-width: 400px;
     width: 100%;
@@ -65,7 +65,7 @@ a {
     height: 48px;
     padding: 0 1em;
     border-radius: 25px;
-    border: 2px solid var(--input-border);
+    border: 2px solid var(--main-color);
     background-color: white;
     font-size: 16px;
     outline-color: var(--secondary-color);
@@ -87,7 +87,7 @@ a {
 
 
 .login-form input:focus {
-    border-color: var(--main-color);
+    border-color: var(--light-color);
 }
 .signup-prompt {
     margin-top: 10px;
@@ -110,11 +110,12 @@ a {
     align-items: center;
     height: 48px;
     background: var(--main-color);
-    border: 4px solid var(--secondary-color);
+    /* border: 4px solid var(--secondary-color); */
     border-radius: 30px;
     cursor: pointer;
     color: white;
-    font-size: 16px;
+    font-size: 18px;
+    font-weight: 600;
     transition: background 0.3s, border-color 0.3s;
 }
 
@@ -128,6 +129,14 @@ a {
         padding: 3em;
     }
 }
+
+
+
+
+
+
+
+
 .signup-prompt {
     margin-top: 10px;
     font-size: 16px;
