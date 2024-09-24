@@ -1,172 +1,259 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>xyz</title>
-    <link rel="stylesheet" href="css/timeline.css">
-    <link rel="stylesheet" href="css/style.css"> <!-- Link to navbar CSS -->
+    <link rel="stylesheet" href="css/timeline.css" />
+    <link rel="stylesheet" href="css/style.css" />
+    <!-- Link to navbar CSS -->
     <script src="js/navbar.js" defer></script>
-</head>
+  </head>
 
-<body>
-    <div id="navbar"></div>
+  <body>
+    <div id="navbar">
+      <div class="header">
+        <!-- Menu icon on the left -->
+        <div class="navbar-toggle" id="navbar-toggle">
+          <div class="icon-bar">
+            <img
+              id="navbar-icon"
+              src="resources/images/cricket-wicket-filled-stroke-by-Vexels.svg"
+              alt="bat"
+            />
+          </div>
+        </div>
+
+        <!-- Logo on the right -->
+        <div class="brand">
+          <a href="#">Logo</a>
+        </div>
+      </div>
+
+      <!-- The sidebar menu -->
+      <div class="navbar-collapse" id="navbar-collapse">
+        <a href="login.html" id="login-link">
+          <div class="nav-elements">Login</div>
+        </a>
+        <a href="upcoming.html">
+          <div class="nav-elements">Home</div>
+        </a>
+        <div class="nav-elements">Contact</div>
+        <div class="nav-elements">Settings</div>
+        <div class="nav-elements">About</div>
+        <div class="Logout hide bottom">Logout</div>
+      </div>
+    </div>
 
     <script>
-        function loadNavbar() {
-            fetch('navbar.html')
-                .then(response => response.text())
-                .then(data => {
-                    document.getElementById('navbar').innerHTML = data;
-                    initializeNavbar();
-                })
-                .catch(error => console.error('Error loading navbar:', error));
+      // Clear login state on fresh page load
+      window.addEventListener("DOMContentLoaded", () => {
+        const loginLink = document.getElementById("login-link");
+        const loggedInUser = localStorage.getItem("loggedInUser");
+        const logout = document.querySelector(".Logout");
+
+        if (loggedInUser) {
+          // Replace the login link with the username
+          loginLink.innerHTML = `<div class="logged-in-user">Hi, ${loggedInUser}</div>`;
+          loginLink.href = "#"; // Optional: change the link to something else if needed
+          logout.classList.remove("hide");
+        } else {
+          // Set default state to "Login" if no user is logged in
+          loginLink.innerHTML = `<div class="nav-elements">Login</div>`;
+          loginLink.href = "login.html";
+          logout.classList.add("hide");
         }
 
-        window.onload = loadNavbar;
+        // Logout functionality
+        logout.addEventListener("click", () => {
+          localStorage.removeItem("loggedInUser");
+          window.location.reload(); // Refresh the page to reset to the logged-out state
+        });
+      });
     </script>
-    <div id="overlay" class="overlay hidden">
-        <div class="overlay-content">
-            <button id="closeOverlay">Close</button>
-            <h1>Team</h1>
-            <div class="team">
-                <div class="img-cont">1</div>
-                <div class="img-cont">2</div>
-                <div class="img-cont">3</div>
-                <div class="img-cont">4</div>
-                <div class="img-cont">5</div>
-                <div class="img-cont">6</div>
-                <div class="img-cont">7</div>
-                <div class="img-cont">8</div>
-                <div class="img-cont">9</div>
-                <div class="img-cont">10</div>
-                <div class="img-cont">11</div>
-            </div>
-            <h1>Tournaments</h1>
-            <div class="tournaments">
-                <div class="tourList">Lorem ipsum dolor sit amet consectetur adipisicing elit. Expedita minima,
-                    repudiandae vitae praesentium doloremque magnam? Fuga nesciunt nemo necessitatibus assumenda
-                    suscipit aliquam voluptatum, hic atque impedit nam? Aperiam, animi quasi.</div>
-                <div class="tourList">Lorem ipsum dolor sit amet consectetur adipisicing elit. Expedita minima,
-                    repudiandae vitae praesentium doloremque magnam? Fuga nesciunt nemo necessitatibus assumenda
-                    suscipit aliquam voluptatum, hic atque impedit nam? Aperiam, animi quasi.</div>
-                <div class="tourList">Lorem ipsum dolor sit amet consectetur adipisicing elit. Expedita minima,
-                    repudiandae vitae praesentium doloremque magnam? Fuga nesciunt nemo necessitatibus assumenda
-                    suscipit aliquam voluptatum, hic atque impedit nam? Aperiam, animi quasi.</div>
-                <div class="tourList">Lorem ipsum dolor sit amet consectetur adipisicing elit. Expedita minima,
-                    repudiandae vitae praesentium doloremque magnam? Fuga nesciunt nemo necessitatibus assumenda
-                    suscipit aliquam voluptatum, hic atque impedit nam? Aperiam, animi quasi.</div>
-                <div class="tourList">Lorem ipsum dolor sit amet consectetur adipisicing elit. Expedita minima,
-                    repudiandae vitae praesentium doloremque magnam? Fuga nesciunt nemo necessitatibus assumenda
-                    suscipit aliquam voluptatum, hic atque impedit nam? Aperiam, animi quasi.</div>
-                <div class="tourList">Lorem ipsum dolor sit amet consectetur adipisicing elit. Expedita minima,
-                    repudiandae vitae praesentium doloremque magnam? Fuga nesciunt nemo necessitatibus assumenda
-                    suscipit aliquam voluptatum, hic atque impedit nam? Aperiam, animi quasi.</div>
-            </div>
-        </div>
 
-    </div>
+    <style>
+      .hide {
+        display: none;
+      }
+
+      .logged-in-user {
+        font-weight: bolder;
+        font-size: 20px;
+        padding: 15px 20px;
+      }
+
+      .navbar-collapse a {
+        text-decoration: none;
+        color: aliceblue;
+      }
+
+      .navbar-collapse .bottom {
+        color: var(--secondary-color);
+        font-weight: bolder;
+        font-size: 15px;
+        padding: 15px 20px;
+        position: absolute;
+        bottom: 20px;
+      }
+    </style>
+
     <section class="intro">
-        <div class="container">
-            <h1>Vertical Timeline &darr;</h1>
-        </div>
+      <div class="container">
+        <h1>Vertical Timeline &darr;</h1>
+      </div>
     </section>
 
     <section class="timeline">
-        <ul>
-            <li>
-                <div class="timeline-item">
-                    <time>1934</time>
-                    <p class="summary">At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis
-                        praesentium...</p>
-                    <p class="more-info" style="display: none;">Here is the extended information about 1934, it will
-                        show when clicked. <a href="#" id="openOverlay">Open Overlay</a></p>
-                </div>
-            </li>
-            <li>
-                <div class="timeline-item">
-                    <time>1937</time>
-                    <p class="summary">Proin quam velit, efficitur vel neque vitae, rhoncus commodo mi...</p>
-                    <p class="more-info" style="display: none;">Extended information for 1937, more details about this
-                        year.<a href="#" id="openOverlay">Open Overlay</a></p>
-                </div>
-            </li>
-            <li>
-                <div class="timeline-item">
-                    <time>1940</time>
-                    <p class="summary">Proin iaculis, nibh eget efficitur varius, libero tellus porta dolor...</p>
-                    <p class="more-info" style="display: none;">Extended information for 1940.<a href="#" id="openOverlay">Open Overlay</a></p>
-                </div>
-            </li>
-            <li>
-                <div class="timeline-item">
-                    <time>1943</time>
-                    <p class="summary">Proin iaculis, nibh eget efficitur varius, libero tellus porta dolor...</p>
-                    <p class="more-info" style="display: none;">Extended information for 1940.<a href="#" id="openOverlay">Open Overlay</a></p>
-                </div>
-            </li>
-            <li>
-                <div class="timeline-item">
-                    <time>1946</time>
-                    <p class="summary">Proin iaculis, nibh eget efficitur varius, libero tellus porta dolor...</p>
-                    <p class="more-info" style="display: none;">Extended information for 1940.<a href="#" id="openOverlay">Open Overlay</a></p>
-                </div>
-            </li>
-            <li>
-                <div class="timeline-item">
-                    <time>1956</time>
-                    <p class="summary">Proin iaculis, nibh eget efficitur varius, libero tellus porta dolor...</p>
-                    <p class="more-info" style="display: none;">Extended information for 1940.<a href="#" id="openOverlay">Open Overlay</a></p>
-                </div>
-            </li>
-            <li>
-                <div class="timeline-item">
-                    <time>1957</time>
-                    <p class="summary">Proin iaculis, nibh eget efficitur varius, libero tellus porta dolor...</p>
-                    <p class="more-info" style="display: none;">Extended information for 1940.<a href="#" id="openOverlay">Open Overlay</a></p>
-                </div>
-            </li>
-            <li>
-                <div class="timeline-item">
-                    <time>1967</time>
-                    <p class="summary">Proin iaculis, nibh eget efficitur varius, libero tellus porta dolor...</p>
-                    <p class="more-info" style="display: none;">Extended information for 1940.<a href="#" id="openOverlay">Open Overlay</a></p>
-                </div>
-            </li>
-            <li>
-                <div class="timeline-item">
-                    <time>1977</time>
-                    <p class="summary">Proin iaculis, nibh eget efficitur varius, libero tellus porta dolor...</p>
-                    <p class="more-info" style="display: none;">Extended information for 1940.<a href="#" id="openOverlay">Open Overlay</a></p>
-                </div>
-            </li>
-            <li>
-                <div class="timeline-item">
-                    <time>1985</time>
-                    <p class="summary">Proin iaculis, nibh eget efficitur varius, libero tellus porta dolor...</p>
-                    <p class="more-info" style="display: none;">Extended information for 1940.<a href="#" id="openOverlay">Open Overlay</a></p>
-                </div>
-            </li>
-            <li>
-                <div class="timeline-item">
-                    <time>2000</time>
-                    <p class="summary">Proin iaculis, nibh eget efficitur varius, libero tellus porta dolor...</p>
-                    <p class="more-info" style="display: none;">Extended information for 1940.<a href="#" id="openOverlay">Open Overlay</a></p>
-                </div>
-            </li>
-            <li>
-                <div class="timeline-item">
-                    <time>2005</time>
-                    <p class="summary">Proin iaculis, nibh eget efficitur varius, libero tellus porta dolor...</p>
-                    <p class="more-info" style="display: none;">Extended information for 1940.<a href="#" id="openOverlay">Open Overlay</a></p>
-                </div>
-            </li>
-        </ul>
+      <ul>
+        <li>
+          <div class="timeline-item">
+            <time>1934</time>
+            <p class="summary">
+              At vero eos et accusamus et iusto odio dignissimos ducimus qui
+              blanditiis praesentium...
+            </p>
+            <p class="more-info" style="display: none">
+              Here is the extended information about 1934, it will show when
+              clicked.
+            </p>
+          </div>
+        </li>
+        <li>
+          <div class="timeline-item">
+            <time>1937</time>
+            <p class="summary">
+              Proin quam velit, efficitur vel neque vitae, rhoncus commodo mi...
+            </p>
+            <p class="more-info" style="display: none">
+              Extended information for 1937, more details about this year.
+            </p>
+          </div>
+        </li>
+        <li>
+          <div class="timeline-item">
+            <time>1940</time>
+            <p class="summary">
+              Proin iaculis, nibh eget efficitur varius, libero tellus porta
+              dolor...
+            </p>
+            <p class="more-info" style="display: none">
+              Extended information for 1940.
+            </p>
+          </div>
+        </li>
+        <li>
+          <div class="timeline-item">
+            <time>1943</time>
+            <p class="summary">
+              Proin iaculis, nibh eget efficitur varius, libero tellus porta
+              dolor...
+            </p>
+            <p class="more-info" style="display: none">
+              Extended information for 1940.
+            </p>
+          </div>
+        </li>
+        <li>
+          <div class="timeline-item">
+            <time>1946</time>
+            <p class="summary">
+              Proin iaculis, nibh eget efficitur varius, libero tellus porta
+              dolor...
+            </p>
+            <p class="more-info" style="display: none">
+              Extended information for 1940.
+            </p>
+          </div>
+        </li>
+        <li>
+          <div class="timeline-item">
+            <time>1956</time>
+            <p class="summary">
+              Proin iaculis, nibh eget efficitur varius, libero tellus porta
+              dolor...
+            </p>
+            <p class="more-info" style="display: none">
+              Extended information for 1940.
+            </p>
+          </div>
+        </li>
+        <li>
+          <div class="timeline-item">
+            <time>1957</time>
+            <p class="summary">
+              Proin iaculis, nibh eget efficitur varius, libero tellus porta
+              dolor...
+            </p>
+            <p class="more-info" style="display: none">
+              Extended information for 1940.
+            </p>
+          </div>
+        </li>
+        <li>
+          <div class="timeline-item">
+            <time>1967</time>
+            <p class="summary">
+              Proin iaculis, nibh eget efficitur varius, libero tellus porta
+              dolor...
+            </p>
+            <p class="more-info" style="display: none">
+              Extended information for 1940.
+            </p>
+          </div>
+        </li>
+        <li>
+          <div class="timeline-item">
+            <time>1977</time>
+            <p class="summary">
+              Proin iaculis, nibh eget efficitur varius, libero tellus porta
+              dolor...
+            </p>
+            <p class="more-info" style="display: none">
+              Extended information for 1940.
+            </p>
+          </div>
+        </li>
+        <li>
+          <div class="timeline-item">
+            <time>1985</time>
+            <p class="summary">
+              Proin iaculis, nibh eget efficitur varius, libero tellus porta
+              dolor...
+            </p>
+            <p class="more-info" style="display: none">
+              Extended information for 1940.
+            </p>
+          </div>
+        </li>
+        <li>
+          <div class="timeline-item">
+            <time>2000</time>
+            <p class="summary">
+              Proin iaculis, nibh eget efficitur varius, libero tellus porta
+              dolor...
+            </p>
+            <p class="more-info" style="display: none">
+              Extended information for 1940.
+            </p>
+          </div>
+        </li>
+        <li>
+          <div class="timeline-item">
+            <time>2005</time>
+            <p class="summary">
+              Proin iaculis, nibh eget efficitur varius, libero tellus porta
+              dolor...
+            </p>
+            <p class="more-info" style="display: none">
+              Extended information for 1940.
+            </p>
+          </div>
+        </li>
+      </ul>
     </section>
 
     <script type="module" src="js/timeline.js"></script>
     <script src="js/expandTimeline.js" defer></script>
-</body>
-
+  </body>
 </html>
