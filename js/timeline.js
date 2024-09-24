@@ -55,13 +55,27 @@
     });
 })();
 
-document.querySelectorAll('#openOverlay').forEach(item => {
-    item.addEventListener('click', (e) => {
-        e.preventDefault();
-        document.getElementById('overlay').classList.remove('hidden');
-    });
-});
+window.addEventListener("DOMContentLoaded", () => {
+    const loginLink = document.getElementById("login-link");
+    const loggedInUser = localStorage.getItem("loggedInUser");
+    const logout = document.querySelector(".Logout");
 
-document.getElementById('closeOverlay').addEventListener('click', () => {
-    document.getElementById('overlay').classList.add('hidden');
-});
+    if (loggedInUser) {
+      // Replace the login link with the username
+      loginLink.innerHTML = `<div class="logged-in-user">Hi, ${loggedInUser}</div>`;
+      loginLink.href = "#"; // Optional: change the link to something else if needed
+      logout.classList.remove("hide");
+    } else {
+      // Set default state to "Login" if no user is logged in
+      loginLink.innerHTML = `<div class="nav-elements">Login</div>`;
+      loginLink.href = "login.html";
+      logout.classList.add("hide");
+    }
+
+    // Logout functionality
+    logout.addEventListener("click", () => {
+      localStorage.removeItem("loggedInUser");
+      window.location.reload(); // Refresh the page to reset to the logged-out state
+    });
+  });
+  
