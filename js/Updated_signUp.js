@@ -151,25 +151,25 @@ const submitForm = async () => {
     console.log("tryingg.....");
     
 
-    try {
-        // Update the fetch URL to point to the correct server port
-        const response = await fetch('http://localhost:5000/api/register', {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json',
-            },
-            body: JSON.stringify(userData),
-        });
+    // try {
+    //     // Update the fetch URL to point to the correct server port
+    //     const response = await fetch('http://localhost:5000/api/register', {
+    //         method: 'POST',
+    //         headers: {
+    //             'Content-Type': 'application/json',
+    //         },
+    //         body: JSON.stringify(userData),
+    //     });
 
-        if (response.ok) {
-            alert('Registration successful!');
-        } else {
-            alert('Registration failed. Please try again.');
-        }
-    } catch (error) {
-        console.error('Error:', error);
-        alert('An error occurred. Please try again.');
-    }
+    //     if (response.ok) {
+    //         alert('Registration successful!');
+    //     } else {
+    //         alert('Registration failed. Please try again.');
+    //     }
+    // } catch (error) {
+    //     console.error('Error:', error);
+    //     alert('An error occurred. Please try again.');
+    // }
 };
 // Initialize button states on page load
 updateProgress();
