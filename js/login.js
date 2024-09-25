@@ -12,5 +12,5 @@ loginForm.addEventListener('submit', async (e) => {
   console.log("Username:", username); // For debugging purposes
 
   // Redirect back to the home page (index.html)
-  window.location.href = 'home.html';
+  window.location.href = 'index.html';
 });
