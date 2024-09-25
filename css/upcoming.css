@@ -30,6 +30,10 @@ body, html {
     justify-content: center;
     
 }
+.all-upcoming-events{
+    color: white;
+    margin-left: 17px;
+}
 
 .background-image {
     position: absolute;
@@ -138,11 +142,13 @@ body, html {
     border: none;
     border-radius: 30px;
     background-color: var(--primary-color);
-    color: var(--tertiary-color);
+    color: white;
     transition: background-color 0.3s ease;
 }
 .book-btn:hover{
-    background-color: #f53c4c;
+    background-color: var(--secondary-color);
+    border:2px solid var(--primary-color);
+    color: var(--primary-color);
 }
   .Logout{
     cursor: pointer;
@@ -158,6 +164,9 @@ body, html {
         position: fixed;
         top: 0px;
     }
+    .image-container{
+        margin-top: 60px;
+    }
     
 }
 
@@ -169,6 +178,9 @@ body, html {
         width: 100vw;
         position: fixed;
         top: 0px;
+    }
+    .image-container{
+        margin-top: 65px;
     }
     
 }
