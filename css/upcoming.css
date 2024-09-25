@@ -153,12 +153,22 @@ body, html {
     .card-container {
         grid-template-columns: repeat(2, 1fr); /* 2 cards per row on medium screens */
     }
+    #navbar {
+        width: 100vw;
+        position: fixed;
+        top: 0px;
+    }
     
 }
 
 @media (max-width: 480px) {
     .card-container {
         grid-template-columns: 1fr; /* 1 card per row on small screens */
+    }
+    #navbar {
+        width: 100vw;
+        position: fixed;
+        top: 0px;
     }
     
 }

@@ -19,7 +19,7 @@ a {
 body {
     font-family: 'Poppins', sans-serif;
     background: var(--secondary-color);
-    color: white;
+    color: var(--tertiary-color);
     overflow-x: hidden;
     padding-bottom: 50px;
 }
@@ -33,7 +33,7 @@ body {
 /* Container with padding for better alignment on small screens */
 .container {
     width: 90%;
-    max-width: 1200px;
+    max-width: 100vw;
     margin: 0 auto;
     text-align: center;
     padding: 0 20px;
@@ -193,9 +193,9 @@ time {
     }
 }
 :root {
-    --primary-color: #f45b69;
-    --secondary-color: #456990;
-    --tertiary-color: #fff;
+    --primary-color: #50223C; /* Primary color */
+    --secondary-color: #F0DAC5; /* Secondary color */
+    --tertiary-color: #040404;
 }
 
 *,
@@ -296,6 +296,9 @@ h1 {
     border-style: solid;
     border-color: transparent var(--primary-color) transparent transparent;
 }
+p{
+    color: var(--secondary-color);
+}
 
 .timeline ul li:nth-child(even) div {
     left: -439px;
@@ -334,6 +337,7 @@ time {
     font-size: 1.2rem;
     font-weight: bold;
     margin-bottom: 8px;
+    color: var(--secondary-color);
 }
 
 /* STICKY NAVBAR */
@@ -355,7 +359,7 @@ time {
 
 .overlay {
     position: fixed;
-    top: 0;
+    top: 5vh;
     left: 0;
     width: 100%;
     height: 100%;
@@ -394,26 +398,39 @@ time {
     overflow-y: auto;
 }
 
-.img-cont {
+/* .img-cont {
     flex: 0 0 auto;
-    /* Prevent items from shrinking */
     width: 100px;
-    /* Width of each image container */
     height: 100px;
-    /* Height of each image container */
     border-radius: 50%;
-    /* Circular shape */
     background-color: var(--primary-color);
-    /* Background color */
     display: flex;
     justify-content: center;
     align-items: center;
     margin: 0 10px;
-    /* Margin between images */
     color: white;
-    /* Text color */
     font-size: 24px;
-    /* Font size */
+} */
+.img-cont {
+    text-align: center;
+    display: inline-block;
+    margin: 10px;
+    width: 100px; /* Adjust width according to the size you prefer */
+}
+
+.img-cont img {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%; /* Makes the image circular */
+    object-fit: cover; /* Ensures the image fits well within the circle */
+    border: 2px solid #ddd; /* Optional border */
+}
+
+.img-cont p {
+    margin-top: 5px;
+    font-size: 14px;
+    color: #333;
+    font-family: Arial, sans-serif;
 }
 
 .team::-webkit-scrollbar {
@@ -441,7 +458,7 @@ time {
     /* Enable vertical scrolling */
     padding: 15px;
     /* Optional: Add some padding */
-    background: #f9f9f9;
+    background: var(--secondary-color);
     /* Optional: Background color */
     border: 1px solid #ddd;
     /* Optional: Border for better visibility */
@@ -454,25 +471,43 @@ time {
     /* Space between items */
     padding: 10px;
     /* Padding for each item */
-    background: #fff;
+    background: var(--secondary-color);
     /* Background for each item */
     border: 1px solid #ccc;
     /* Border for each item */
     border-radius: 5px;
+    color: var(--primary-color);
     /* Rounded corners for items */
+}
+.tourList p{
+    color: var(--primary-color);
 }
 
 /* EFFECTS */
 .timeline ul li::after {
     transition: background 0.5s ease-in-out;
 }
+#closeOverlay{
+    padding: 7px 10px;
+    border: none;
+    box-shadow: inset;
+    background-color: red;
+    color: #fff;
+    border-radius: 50px;
+   
+}
+#butDiv {
+    display: flex;
+    justify-content: flex-end; /* Align the button to the right */
+    padding: 10px; /* Optional: add padding for some space */
+  }
 
 /* MEDIA QUERIES FOR MOBILE COMPATIBILITY */
 @media (max-width: 768px) {
     body {
         font-family: 'Poppins', sans-serif;
         background: var(--secondary-color);
-        color: white;
+        color: var(--tertiary-color);
         overflow-x: hidden;
     }
 
@@ -523,6 +558,7 @@ time {
     .timeline ul {
         margin-left: 20px; /* Reset margin if necessary */
         padding-left: 0; /* Reset padding if necessary */
+        width: 80vw;
     }
     
     .timeline ul li {
@@ -532,19 +568,20 @@ time {
         /* You might also want to adjust width or other styles here */
     }
     #overlay{
-        width: 80vw;
+        width: 100vw;
     }
     .overlay-content {
-        background: white;
+        background: var(--primary-color);
         padding: 20px;
         border-radius: 8px;
-        max-width: 90%;
-        /* Responsive max width */
-        width: 900px;
+        width: 90%;
+        height: 80%;
         /* Fixed width for larger screens */
         box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        top: 0;
         overflow: hidden;
         /* Prevent overflow */
     }
 
 }
+
