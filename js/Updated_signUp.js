@@ -147,7 +147,7 @@ const submitForm = async () => {
         newsletter: document.querySelector('input[type="checkbox"]')?.checked || false,
     };
     alert("SignUp successful! , Login to continue")
-    window.location.href = "../login.html";
+    window.location.href = "login.html";
     console.log("tryingg.....");
     
 
